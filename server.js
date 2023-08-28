@@ -45,13 +45,13 @@ const fetchData = async () => {
           }
         ).then((response) => {
           if (!response.ok) throw new Error("Network response was not ok");
-          console.log(response);
+          if (response.ok) {
+            console.log(response);
+          }
           return response.json();
         })
       )
     );
-
-    console.log(responses);
 
     const arr = responses.flatMap((data) =>
       data.tracks.map((track) => ({
