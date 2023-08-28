@@ -3,8 +3,11 @@ const express = require("express");
 const cors = require("cors");
 const fetch = require("node-fetch");
 const app = express();
+const path = require("path");
 
 const PORT = process.env.PORT || 4000;
+
+// Get API Route
 
 app.use(
   cors({
@@ -104,6 +107,14 @@ app.get("/api/soundcloud", (req, res) => {
     res.status(500).json({ error: "No data available" });
   }
 });
+
+// Fallback to index for all routes
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "path/to/your/index.html"));
+});
+
+// start server
 
 app.listen(PORT, () => {
   console.log(`Server is listening on ${PORT}`);
