@@ -108,12 +108,6 @@ app.get("/api/soundcloud", (req, res) => {
   }
 });
 
-// Fallback to index for all routes
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "path/to/your/index.html"));
-});
-
 // start server
 
 app.listen(PORT, () => {
