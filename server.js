@@ -51,6 +51,8 @@ const fetchData = async () => {
       )
     );
 
+    console.log(responses);
+
     const arr = responses.flatMap((data) =>
       data.tracks.map((track) => ({
         user: data.username,
