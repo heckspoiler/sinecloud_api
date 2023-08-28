@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 4000;
 
 app.use(
   cors({
-    origin: "https://sinecloud.on-render.com",
+    origin: "https://sinecloud.onrender.com",
     methods: "GET, POST",
     allowedHeaders: ["Content-Type", "Authorization"],
   })
